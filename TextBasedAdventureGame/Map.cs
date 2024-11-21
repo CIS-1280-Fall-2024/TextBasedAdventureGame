@@ -2,6 +2,14 @@
 // Programer: Rob Garner (rgarner7@cnm.edu)
 // Date: 25 May 2016
 // Represents a travel option.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Diagnostics;
+
 namespace TextBasedAdventureGame
 {
     /// <summary>
@@ -16,19 +24,12 @@ namespace TextBasedAdventureGame
         public List<MapLocation> Locations { get; set; }
 
         /// <summary>
-        /// Player's location.
-        /// </summary>
-        public MapLocation PlayerLocation { get; set; }
-
-        /// <summary>
         /// Constructor that creates the game map.
         /// </summary>
         public Map()
         {
             //Create map locations first
-            Locations = new List<MapLocation>();   
-            
-            //Add locations to the locations list
+            Locations = new List<MapLocation>();           
             Locations.Add(new MapLocation("You are on a road leading to a town."));
             Locations.Add(new MapLocation("You are on a road in front of a saloon."));
             Locations.Add(new MapLocation("You are in a saloon."));
@@ -65,10 +66,21 @@ namespace TextBasedAdventureGame
             //Jail
             Locations[6].TravelOptions.Add(new TravelOption("The store door leads out to the street.", Locations[5]));
 
-            //Set the player's starting location.
-            PlayerLocation = Locations[0];
+            //Add some items. 
+            Locations[0].Items.Add(new InventoryItem("Broken Rifle"));
+            
+            HidingPlace rock = new HidingPlace("Large Rock");
+            rock.HiddenObject = new InventoryItem("Snow Globe");
+            Locations[0].Items.Add(rock);
+
+            Locations[1].Items.Add(new PortableHidingPlace("Large Russian Doll",1, 
+                new PortableHidingPlace("Medium Russian Doll",1, 
+                new PortableHidingPlace("Small Russian Doll",1,
+                new PortableHidingPlace("Even Smaller Russian Doll", 1,
+                new PortableHidingPlace("Tiny Russian Doll", 1,null))))));
+
+            Locations[2].Items.Add(new PortableHidingPlace("Backpack",1,new InventoryItem("Peanut butter and jelly sandwich")));
 
         }
-
     }
 }

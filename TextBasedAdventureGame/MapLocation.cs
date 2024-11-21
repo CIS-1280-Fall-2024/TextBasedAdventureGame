@@ -2,6 +2,12 @@
 // Programer: Rob Garner (rgarner7@cnm.edu)
 // Date: 25 May 2016
 // Represents a travel option.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace TextBasedAdventureGame
 {
     /// <summary>
@@ -13,6 +19,11 @@ namespace TextBasedAdventureGame
         /// Description of the location that will be shown to player.
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// List of GameObjects at this MapLocation
+        /// </summary>
+        public List<GameObject> Items { get; set; }
 
         /// <summary>
         /// List of travel options which are a link to where you can go from this location.
@@ -27,6 +38,7 @@ namespace TextBasedAdventureGame
         {
             Description = description;
             TravelOptions = new List<TravelOption>();
+            Items = new List<GameObject>();
         }
 
         public override string ToString()

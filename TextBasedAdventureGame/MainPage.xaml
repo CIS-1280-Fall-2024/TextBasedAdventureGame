@@ -30,6 +30,43 @@
                 <ListView x:Name="TravelOptionsListView" ItemTapped="TravelOptionsListView_ItemTapped" SeparatorVisibility="Default"/>
                 </VerticalStackLayout>
             </Border>
+
+            <Border Stroke="#C49B33"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label Text="Items at this location" TextColor="#C49B33" />
+                    <ListView x:Name="ItemsListView" ItemTapped="ItemsListView_ItemTapped" SeparatorVisibility="Default"/>
+
+                    <Button x:Name="TakeButton" Text="Take Selected Item" Clicked="TakeButton_Clicked"/>
+                    <Button x:Name="SearchButton" Text="Search Selected Item" Clicked="SearchButton_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border Stroke="#C49B33"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label Text="Inventory" TextColor="#C49B33" />
+                    <ListView x:Name="InventoryListView" ItemTapped="InventoryListView_ItemTapped" SeparatorVisibility="Default"/>
+                    <Button x:Name="DropInventoryItemButton" Text="Drop Selected Inventory Item" Clicked="DropInventoryItemButton_Clicked" IsEnabled="True"/>
+                 
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Stroke="#C49B33"
+                 StrokeThickness="4"
+                 StrokeShape="RoundRectangle 20,20,20,20"
+                 Background="#2B0B98"
+                 Padding="16,8"
+                 HorizontalOptions="Center">               
+                    <Label x:Name="GameStatusLabel" Text="Inventory" TextColor="#C49B33" />                   
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

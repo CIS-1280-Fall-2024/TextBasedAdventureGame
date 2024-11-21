@@ -2,6 +2,12 @@
 // Programer: Rob Garner (rgarner7@cnm.edu)
 // Date: 25 May 2016
 // Represents a travel option.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace TextBasedAdventureGame
 {
     /// <summary>
