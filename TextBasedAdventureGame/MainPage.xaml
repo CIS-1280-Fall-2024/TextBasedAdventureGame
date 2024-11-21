@@ -7,12 +7,29 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Label Text="Location Description"/>
-            <Label x:Name="LocationDescriptionLabel" />
-            <Label Text="Click on an option to travel to that location"/>
-            <ListView x:Name="TravelOptionsListView" ItemTapped="TravelOptionsListView_ItemTapped">
-            </ListView>
+            
+            <Border Stroke="#C49B33"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label Text="Location Description" TextColor="#C49B33" />
+                    <Label x:Name="LocationDescriptionLabel" />                    
+                </VerticalStackLayout>
+            </Border>            
+            <Border Stroke="#C49B33"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label Text="Click on an option to travel to that location" TextColor="#C49B33" />
+                <ListView x:Name="TravelOptionsListView" ItemTapped="TravelOptionsListView_ItemTapped" SeparatorVisibility="Default"/>
+                </VerticalStackLayout>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
